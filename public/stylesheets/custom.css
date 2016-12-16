@@ -1,0 +1,48 @@
+wrapper.h2 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+   text-align: center;
+   font-size: 70px;
+   font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(/assets/images/star.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+header ul li {
+    font-size: 20px;
+}
+
+.carousel-caption h3 {
+	font-size: 100px;
+	
+}
+.carousel-caption h2{
+    padding-bottom: 30px;
+    font-size: 100px;
+}
+
+.carousel-caption h1{
+    padding-bottom: 150px;
+    
+}
+
+.container p {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.navbar-inverse {
+    margin: 0px;
+    padding-top: 0px;
+}
+

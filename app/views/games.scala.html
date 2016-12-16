@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Games</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="cssShop/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-inverse" style="border-radius:0px !important; margin-bottom:0px;">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="@routes.HomeController.index">Review Station</a>
+			</div>
+            
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="@routes.HomeController.index">Home</a></li>
+                    <li class="active"><a href="@routes.HomeController.games">Games<span class="sr-only">(current)</span></a></li>
+<li><a href="@routes.HomeController.products">Products</a></li>
+<li><a href="@routes.LoginController.login">Login</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+<div class="clearfix" style="margin-bottom:20px;"></div>
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Jumbotron Header -->
+		<header class="jumbotron hero-spacer">
+			<h1 class="animated fadeInDown">Browse Games</h1>
+			<p>Here you will find all of the most up to date games for the best price. All games are available for all major platforms.
+			
+            	<ul>
+					<li>Playstation 4</li>
+					<li>Xbox One</li>
+					<li>PC</li>
+				</ul>
+			</p>
+			
+			</p>
+		</header>
+
+		<hr>
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>Top Picks Right Now</h3>
+			</div>
+		</div>
+		<!-- /.row -->
+
+		<!-- Page Features -->
+		<div class="row text-center">
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="@routes.HomeController.gta"> <img src="/assets/images/buygta.jpg"></a>
+					<div class="caption">
+						<h3>Grand Theft Auto 5</h3>
+						<p>Grand Theft Auto V. Grand Theft Auto V is an open world action-adventure video game developed by Rockstar North and
+							published by Rockstar Games</p>
+						<p>
+							<a href="@routes.HomeController.products" class="btn btn-primary">$45.00</a> <a href="@routes.HomeController.gta" class="btn btn-default">More Info</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="@routes.HomeController.battlefield"><img src="/assets/images/buybf.jpg"></a>
+					<div class="caption">
+						<h3>Battlefield 1</h3>
+						<p>Battlefield 1 is a first-person shooter that emphasizes teamwork. The game is set in the period of World War I, and
+							is inspired by historic events</p>
+						<p>
+							<a href="@routes.HomeController.products" class="btn btn-primary">$70.00</a> <a href="@routes.HomeController.battlefield" class="btn btn-default">More Info</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="@routes.HomeController.witcher"><img src="/assets/images/buywitcher.jpg"> </a>
+					<div class="caption">
+						<h3>The Witcher 3</h3>
+						<p>Wild Hunt is a story-driven, next-generation open world role-playing game, set in a visually stunning fantasy universe,
+							full of meaningful choices and consequences.</p>
+						<p>
+							<a href="@routes.HomeController.products" class="btn btn-primary">$50.00</a> <a href="@routes.HomeController.witcher" class="btn btn-default">More Info</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="@routes.HomeController.watchdogs"><img src="/assets/images/buywd.jpg"></a>
+					<div class="caption">
+						<h3>Watch Dogs 2</h3>
+						<p>Watch Dogs 2 is an open world action-adventure video game where you become a hacker. You have access to everything
+							around you through the use of tech.</p>
+						<p>
+							<a href="@routes.HomeController.products" class="btn btn-primary">$65.00</a> <a href="@routes.HomeController.watchdogs" class="btn btn-default">More Info</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.row -->
+
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; Review Station 2016 - By Micko Corbantes x00121815 & Daniel Coxon x00131957</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+
+@(products: List[models.Product])
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("Products") {
+  <!-- HTML content for the index view -->
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Review Station</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/stylesheets/products.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.jpg")">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style="border-radius:0px !important; margin-bottom:0px;">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+				<a class="navbar-brand" href="@routes.HomeController.index">Review Station</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li ><a href="@routes.HomeController.index">Home <span class="sr-only">(current)</span></a></li>
+					<li><a href="@routes.HomeController.games">Games</a></li>
+				        <li class="active"><a href="@routes.HomeController.products">Products</a></li>
+					<li><a href="@routes.LoginController.login">Login</a></li>
+					
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+
+		<!-- /.container-fluid -->
+	</nav>
+  
+<div class ="text-center">
+      <div class="col-sm-10">
+	@if(flash.containsKey("success")) {
+		<div class="alert alert-success">
+		@flash.get("success")
+		</div>
+	}
+        <table class="table table-bordered table-hover table-condensed">
+          <thead>
+          <!-- The header row-->
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+          </tr>
+          </thead>
+          <tbody>
+            <!-- Product row(s) -->
+	   @for(p <- products) {
+            <tr>
+             <td class="numeric">@p.getId</td>
+	     <td>@p.getName</td>
+ 	     <td class="numeric">@p.getStock</td>
+  	     <td class="numeric">&euro; @("%.2f".format(p.getPrice))</td>
+
+	<td>
+		<a href="@routes.HomeController.updateProduct(p.getId)" class="btn-xs btn-warning">
+		<span class="glyphicon glyphicon-pencil">Update</span></a>
+	</td>
+
+
+		<td>
+			<a href="@routes.HomeController.deleteProduct(p.getId)" class="btn-xs btn-danger" onclick="return 				confirmDel();">
+			<span class="glyphicon glyphicon-trash"><buttonclass="btn-xs btn-danger">Delete</button></span>
+			</a>
+		</td>
+		
+		
+		<td>
+
+			<a href="@routes.HomeController.purchase" class="btn-xs btn-success">
+			<span class="glyphicon glyphicon-eur"><buttonclass="btn-xs btn-success">Purchase</button></span>
+			</a>
+		</td>
+
+            </tr>
+	}
+          </tbody>
+        </table>
+		<p>
+		<a href="@routes.HomeController.addProduct()">
+		<button class="btn btn-primary">Add a Product</button>
+		<a href="@routes.HomeController.games">
+		<button class="btn btn-danger">Cancel</button>
+		</a>
+		</p>
+      </div>
+  </div>
+	
+
+    </body>
+
+</html>
+	
+ 
+	<script>
+		function confirmDel() {
+			return confirm('Are you sure?');
+	}
+	</script>
+ <!-- End of content for main -->
+}
